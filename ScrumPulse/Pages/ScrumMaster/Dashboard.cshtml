@@ -1,0 +1,26 @@
+﻿@page
+@model ScrumPulse.Pages.ScrumMaster.DashboardModel
+@{
+    ViewData["Title"] = "Scrum Master Dashboard";
+}
+
+<h2>Sprints</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sprint in Model.Sprints)
+        {
+            <tr>
+                <td>@sprint.Nombre</td>
+                <td>@sprint.StartDate.ToShortDateString()</td>
+                <td>@sprint.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

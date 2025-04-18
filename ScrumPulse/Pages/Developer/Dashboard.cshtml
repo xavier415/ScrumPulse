@@ -1,0 +1,24 @@
+﻿@page
+@model ScrumPulse.Pages.Developer.DashboardModel
+@{
+    ViewData["Title"] = "Developer Dashboard";
+}
+
+<h2>Tareas</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarea in Model.Tareas)
+        {
+            <tr>
+                <td>@tarea.Titulo</td>
+                <td>@tarea.Estado</td>
+            </tr>
+        }
+    </tbody>
+</table>

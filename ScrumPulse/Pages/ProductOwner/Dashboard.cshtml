@@ -1,0 +1,28 @@
+﻿@page
+@model ScrumPulse.Pages.ProductOwner.DashboardModel
+@{
+    ViewData["Title"] = "Product Owner Dashboard";
+}
+
+<h2>Historias de Usuario</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Prioridad</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var historia in Model.Backlog)
+        {
+            <tr>
+                <td>@historia.Titulo</td>
+                <td>@historia.Descripcion</td>
+                <td>@historia.Prioridad</td>
+                <td>@historia.Tags</td>
+            </tr>
+        }
+    </tbody>
+</table>
